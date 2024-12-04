@@ -5,7 +5,6 @@ from rembg import remove
 import os
 from PIL import Image
 import tempfile
-import webbrowser
 from io import BytesIO
 
 class ImageCompositor:
@@ -43,9 +42,9 @@ class ImageCompositor:
 # Streamlit UI
 st.title("Image Compositor Web App")
 
+# Sidebar with a clickable link instead of a button
 st.sidebar.title("Navigation")
-if st.sidebar.button("Visit AI Video Generator"):
-    webbrowser.open_new_tab("https://pollo.ai/text-to-video")  # Pollo AI URL
+st.sidebar.markdown("[Visit AI Video Generator](https://pollo.ai/text-to-video)", unsafe_allow_html=True)
 
 compositor = ImageCompositor()
 
